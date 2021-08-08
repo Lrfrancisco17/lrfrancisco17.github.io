@@ -1,9 +1,13 @@
 Luis Francisco project portfolio.
 
-Thank you for visiting mypage. 
+Thank you for visiting my webpage. 
+
+This Portfolio involves mostly Centos OS projects. 
+
+Webpage
 CSS
 39.2%
- 
+
 SCSS
 35.8%
  
