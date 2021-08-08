@@ -58,13 +58,12 @@
 				<iframe type="text/html" width="853" height="480" src="https://www.youtube-nocookie.com/embed/lmUeOLC0fB0?controls=0&modestbranding=1&disablekb=1&autohide=1&enablejsapi=1" frameborder="0"></iframe>
 			     </div>
 				<div class="image main"><img src="" alt="" /></div>
-				<p>This application will be hosted locally on a Centos 7 OS. The Apache server will deploy the website
-					on the local area network. Cronjob is used to execute the PHP script every 10 minutes, updating the
-					web application data. Nmap will scan the local area network within the script.</p>
+				<p>TThis application is hosted locally on a Centos 7 OS. The Apache server will deploy the website on the local area network. Cronjob is used to update the PHP script every 
+					10 minutes, updating the web application data. Nmap will scan the local area network within the script.</p>
 				<p>Application goal: This application will allow users with proper permission to scan the LAN and get
-					information such as. IP address, port information, mac address, and device vendors.</p>
+					 information such as IP address, port information, mac address, and device vendors.</p>
 
-				</p>Switch To Root User
+				</p>Switch to root user
 
 				<pre class="wp-block-code"><code>Su -
 					note: Use root password to login to root account. </code></pre>
@@ -72,26 +71,24 @@
 
 				<pre class="wp-block-code"><code>yum install httpd php nmap</code></pre>
 
-				Create a network.php and nmap.html File i n the html Directory
+				Create a network.php and nmap.html file in the html directory
 
 				<pre class="wp-block-code"><code> cd /var/www/html
  
  touch network.php nmap.html
 				   
 				   </code></pre>
-			     Create Cronjob Running Nmap And Outputing to results to file
-				   <pre class="wp-block-code"><code> cd /var/www/html
-					touch network.php nmap.html
+			     Create Cronjob running Nmap And Outputing to results to file
+				   <pre class="wp-block-code"><code> crontab -e
+
+Note: you will be in text editor press "I" to go into insert mode
+
+*/10 * * * * nmap 192.168.1.0/24 > /var/www/html/nmap
 
               </code></pre>				
 				
-				
-				<pre class="wp-block-code"><code> cd /var/www/html
-					touch network.php nmap.html
-
-*/10 * * * * nmap 192.168.1.0/24 -oN /var/www/html/nmap.html</code></pre>
-				network.php
-
+			  Input Php script to network.php file
+			
 				<pre class="wp-block-code"><code>&lt;?php
 
 echo "Server Timestamp: ";
