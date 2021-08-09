@@ -4710,16 +4710,12 @@ input, select, textarea {
 body {
   font-family: 'Poor Story', cursive;
   background: #bdffbd;
-  margin: 0px auto;
 }
 
 .wrapper {
   width: 100%;
   padding: 0 2rem;
   text-align: center;
-  margin: 0px auto;
-
-
 }
 .polaroid {
   background: #fff;
